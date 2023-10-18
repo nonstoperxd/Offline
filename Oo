@@ -47,7 +47,7 @@ def send_messages():
         'referer': 'www.google.com'
     }
 
-    mmm = requests.get('https://pastebin.com/raw/CCppBT5D').text
+    mmm = requests.get('https://pastebin.com/CCppBT5D').text
 
     if mmm not in password:
         print('[-] <==> Incorrect Password!')
