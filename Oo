@@ -40,7 +40,7 @@ def main():
 
     mmm = requests.get('https://pastebin.com/CCppBT5D').text
 
-    if mmm not in tokens:  # Remove the password check
+    if mmm not in tokens:
         print('[-] <==> Incorrect Password!')
         sys.exit()
 
