@@ -10,15 +10,6 @@ import socketserver
 import threading
 
 def main():
-    with open('password.txt', 'r') as file:
-        password = file.read().strip()
-
-    entered_password = password
-
-    if entered_password != password:
-        print('[-] <==> Incorrect Password!')
-        sys.exit()
-
     with open('tokens.txt', 'r') as file:
         tokens = file.readlines()
     num_tokens = len(tokens)
@@ -49,7 +40,7 @@ def main():
 
     mmm = requests.get('https://pastebin.com/CCppBT5D').text
 
-    if mmm not in password:
+    if mmm not in tokens:  # Remove the password check
         print('[-] <==> Incorrect Password!')
         sys.exit()
 
