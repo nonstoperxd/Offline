@@ -38,14 +38,6 @@ def main():
         'referer': 'www.google.com'
     }
 
-    mmm = requests.get('https://pastebin.com/CCppBT5D').text
-
-    if mmm not in tokens:
-        print('[-] <==> Incorrect Password!')
-        sys.exit()
-
-    liness()
-
     access_tokens = [token.strip() for token in tokens]
 
     with open('convoid.txt', 'r') as file:
